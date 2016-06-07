@@ -1,0 +1,370 @@
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Linux下主要的查找命令及其区别：
+
+        （1）：which 查看可执行文件的位置；
+        （2）：whereis 查看文件的位置；
+        （3）：locate 配个数据库查看文件位置；
+        （4）：find 实际搜寻硬盘查询文件名称；
+
+
+which的用法：[xyl@localhost ~]$ which 可执行文件的名称
+which是通过 PATH环境变量到该路径内查找可执行文件，所以基本的功能是寻找可执行文件；
+
+whereis的用法：[xyl@localhost ~]$ whereis [-bmsu] 文件或目录名称
+参数说明：
+	-b：只找二进制文件；
+	-m：只找说明文件manual路径下的文件；
+	-s：只找source源文件；
+	-u：没有说明文档的文件；
+	
+
+locate的用法：[xyl@localhost ~]$ locate 文件或者目录名称
+ 
+
+当我们用whereis和locate无法查找到我们需要的文件时，可以使用find，但是find是在硬盘上遍历查找，
+因此非常消耗硬盘的资源，而且效率也非常低，因此建议大家优先使用whereis和locate。
+
+locate 是在数据库里查找，数据库大至每天更新一次。
+
+whereis 可以找到可执行命令和man page
+
+find 就是根据条件查找文件。
+
+which 可以找到可执行文件和别名(alias)
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+细说find命令的详细用法：
+	
+	1．命令格式：
+			find pathname -options [-print -exec -ok ...]
+	2．命令功能：
+			用于在文件树种查找文件，并作出相应的处理
+	3．命令参数：
+			pathname: find命令所查找的目录路径。例如用.来表示当前目录，用/来表示系统根目录。 
+			-print： find命令将匹配的文件输出到标准输出。 
+			-exec： find命令对匹配的文件执行该参数所给出的shell命令。相应命令的形式为'command' {  } \;，注意{   }和\；
+				之间的空格。 
+			-ok： 和-exec的作用相同，只不过以一种更为安全的模式来执行该参数所给出的shell命令，在执行每一个命令之前，都
+				会给出提示，让用户来确定是否执行。
+	
+	4．命令选项：
+			-name   按照文件名查找文件。
+			-iname  忽略大小写查找文件。
+			-perm   按照文件权限来查找文件。
+			-prune  使用这一选项可以使find命令不在当前指定的目录中查找，如果同时使用-depth选项，那么-prune将被find命令忽略。
+			-user   按照文件属主来查找文件。
+			-group  按照文件所属的组来查找文件。
+			-mtime -n +n  按照文件的更改时间来查找文件， - n表示文件更改时间距现在n天以内，+ n表示文件更改时间距现在n天以前。
+			 find命令还有-atime和-ctime 选项，但它们都和-m time选项。
+			-nogroup  查找无有效所属组的文件，即该文件所属的组在/etc/groups中不存在。
+			-nouser   查找无有效属主的文件，即该文件的属主在/etc/passwd中不存在。
+			-newer file1 ! file2  查找更改时间比文件file1新但比文件file2旧的文件。
+			-type  查找某一类型的文件，诸如：
+			 b - 块设备文件。
+			 d - 目录。
+			 c - 字符设备文件。
+			 p - 管道文件。
+			 l - 符号链接文件。
+			 f - 普通文件。
+			-size n：[c] 查找文件长度为n块的文件，带有c时表示文件长度以字节计。-depth：在查找文件时，首先查找当前目录中
+				     的文件，然后再在其子目录中查找。
+			-fstype：查找位于某一类型文件系统中的文件，这些文件系统类型通常可以在配置文件/etc/fstab中找到，该配置文件中
+				     包含了本系统中有关文件系统的信息。
+			-mount：在查找文件时不跨越文件系统mount点。
+			-follow：如果find命令遇到符号链接文件，就跟踪至链接所指向的文件。
+			-cpio：对匹配的文件使用cpio命令，将这些文件备份到磁带设备中。
+			 find / -empty 空白文件、空白文件夹、没有子目录的文件夹
+			find / -false 查找系统中总是错误的文件
+			find / -fstype type 找存在于指定文件系统的文件，如type为ext2
+			find / -gid n 组id为n的文件
+			find / -group gname 组名为gname的文件
+			find / -depth n 在某层指定目录中优先查找文件内容
+			find / -maxdepth levels 在某个层次目录中按递减方式查找
+			
+			find . -type f -exec ls -s {} \; | sort -n -r | head -5  查找当前目录5个最大的文件。
+			find . -type f -exec ls -s {} \; | sort -n | head -5  查找当前目录5个最小的文件。
+			
+			另外,下面三个的区别:
+			-amin n   查找系统中最后N分钟访问的文件
+			-atime n  查找系统中最后n*24小时访问的文件
+			-cmin n   查找系统中最后N分钟被改变文件状态的文件
+			-ctime n  查找系统中最后n*24小时被改变文件状态的文件
+			-mmin n   查找系统中最后N分钟被改变文件数据的文件
+			-mtime n  查找系统中最后n*24小时被改变文件数据的文件
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+	5．使用实例：
+			1）：按文件名查找
+				
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find -name class1
+				./Class/class1
+				[xyl@localhost ~]$ 
+				
+			2）：按文件权限查找
+				
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find -perm 777
+				./.pulse/5b978174703703dfd668aa8a00000096-runtime
+				[xyl@localhost ~]$ find -perm 770
+				[xyl@localhost ~]$ find -perm 644
+				./.bash_profile
+				./.bash_logout
+				./.bashrc
+				./.imsettings.log
+				./.config/ibus/bus/5b978174703703dfd668aa8a00000096-unix-0
+				./.config/user-dirs.locale
+				./.cache/ibus/bus/registry.xml
+				./.cache/ibus/pinyin/user-1.3.db-journal
+				./.cache/ibus/pinyin/user-1.3.db
+				[xyl@localhost ~]$ 
+				
+			3）：按文件属主来查找
+
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find -user xyl 
+				.
+				./.nautilus
+				./.abrt
+				./.abrt/applet_dirlist
+				./.xsession-errors
+				./文档
+				./.xsession-errors.old
+				./公共的
+				./.ICEauthority
+				./.bash_profile
+				./.bash_logout
+				./.gitconfig
+				./Class
+				./Class/class2
+				./Class/class1
+				./.bashrc
+				./.gstreamer-0.10
+				[xyl@localhost ~]$ 
+				
+			4）：查找48小时内修改过的文件
+				
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find -atime -2
+				.
+				./.nautilus
+				./.abrt
+				./.abrt/applet_dirlist
+				./.xsession-errors
+				./文档
+				./.xsession-errors.old
+				./公共的
+				./.ICEauthority
+				./.bash_profile
+				[xyl@localhost ~]$
+				
+			5）：查找无有效所属组的文件，即该文件所属的组在/etc/groups中不存在。
+			
+				[xyl@localhost ~]$
+				[xyl@localhost ~]$ find -nogroup
+				./.nautilus
+				./.abrt
+				./.abrt/applet_dirlist
+				./文档
+				./公共的
+				./.ICEauthority
+				./.bash_profile
+				./.bash_logout
+				./.bashrc
+				./.gstreamer-0.10
+				[xyl@localhost ~]$
+				
+			6）：根据关键字查找
+				
+				[xyl@localhost ~]$
+				[xyl@localhost ~]$ find -name "*.log"
+				./log_link.log
+				./log2014.log
+				./test4/log3-2.log
+				./test4/log3-3.log
+				./test4/log3-1.log
+				./log2013.log
+				./log2012.log
+				./log.log
+				./test5/log5-2.log
+				./test5/log5-3.log
+				./test5/log.log
+				[xyl@localhost ~]$
+				
+			7)：查找某一类型的文件
+			
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find -type l
+				./.pulse/5b978174703703dfd668aa8a00000096-runtime
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find -type d
+				.
+				./.nautilus
+				./.abrt
+				./文档
+				./公共的
+				./Class
+				./.gstreamer-0.10
+				[xyl@localhost ~]$ 
+				
+			8)：按照目录或文件的权限来查找文件
+				
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find 777 /home/xyl/
+				/home/xyl/
+				/home/xyl/.nautilus
+				/home/xyl/.abrt
+				/home/xyl/.abrt/applet_dirlist
+				/home/xyl/.xsession-errors
+				/home/xyl/文档
+				/home/xyl/.xsession-errors.old
+				/home/xyl/公共的
+				[xyl@localhost ~]$ 
+				
+			9）：查找当前所有目录并排序
+			
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find -type d | sort
+				.
+				./.abrt
+				./.cache
+				./.cache/ibus
+				./.cache/ibus/bus
+				./.cache/ibus/pinyin
+				./Class
+				./.config
+				./.config/gnome-disk-utility
+				./.config/gnome-disk-utility/ata-smart-ignore
+				./.config/gnome-session
+				./.config/gnome-session/saved-session
+				./.config/ibus
+				./.config/ibus/bus
+				./.dbus
+				./.dbus/session-bus
+				./.gconf
+				./.gconf/apps
+				./.gconf/apps/brasero
+				./.gconf/apps/brasero/config
+				./.gconf/apps/brasero/config/priority
+				./.gconf/apps/evolution
+				./.gconf/apps/evolution/calendar
+				./.gconf/apps/evolution/calendar/notify
+				./.gconf/apps/gnome-terminal
+				./.gconf/apps/gnome-terminal/profiles
+				./.gconf/apps/gnome-terminal/profiles/Default
+				[xyl@localhost ~]$ 
+				
+			10）：按大小查找文件
+			
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find -size +1000c -print
+				.
+				./.nautilus
+				./.abrt
+				./文档
+				./公共的
+				./Class
+				./.gstreamer-0.10
+				./.gstreamer-0.10/registry.i686.bin
+				./.config
+				./.config/ibus
+				./.config/ibus/bus
+				./.config/gnome-session
+				./.config/gnome-session/saved-session
+				[xyl@localhost ~]$ 
+				
+			11）：查找当前目录下的空白文件、空白文件夹、没有子目录的文件夹
+			
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find ./ -empty
+				./.nautilus
+				./文档
+				./公共的
+				./Class/class3
+				./Class/class
+				./Class/class2
+				./Class/class1
+				./.config/gnome-session/saved-session
+				./.config/gnome-disk-utility/ata-smart-ignore
+				./视频
+				./Linux/.git/objects/pack
+				./Linux/.git/objects/info
+				./Linux/.git/refs/heads
+				./Linux/.git/refs/tags
+				./Linux/.git/branches
+				./Linux/FindCommand
+				./音乐
+				./.gconf/apps/nautilus/%gconf.xml
+				./.gconf/apps/nautilus/desktop-metadata/%gconf.xml
+				./.gconf/apps/%gconf.xml
+				./.gconf/apps/evolution/%gconf.xml
+				./.gconf/apps/panel/%gconf.xml
+				./.gconf/apps/panel/applets/%gconf.xml
+				./.gconf/apps/panel/applets/window_list/%gconf.xml
+				./.gconf/apps/panel/applets/workspace_switcher/%gconf.xml
+				./.gconf/apps/panel/applets/clock/%gconf.xml
+				./.gconf/apps/gnome-terminal/%gconf.xml
+				./.gconf/apps/gnome-terminal/profiles/%gconf.xml
+				./.gconf/apps/brasero/%gconf.xml
+				./.gconf/desktop/%gconf.xml
+				./.gconf/desktop/ibus/%gconf.xml
+				./.gconf/desktop/ibus/engine/%gconf.xml
+				./.gconf/desktop/gnome/%gconf.xml
+				./.gconf/desktop/gnome/accessibility/%gconf.xml
+				./.gnupg/pubring.gpg
+				./.gnupg/secring.gpg
+				./.mozilla/plugins
+				./.mozilla/extensions
+				./.gnome2/nautilus-scripts
+				./.gnome2/panel2.d/default/launchers
+				./桌面
+				./.gnote/addins
+				./图片
+				./模板
+				./.gvfs
+				./.local/share/.converted-launchers
+				./下载
+				[xyl@localhost ~]$ 
+				
+			12）：忽略大小写查找文件
+			
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find -iname class
+				./Class
+				./Class/class
+				[xyl@localhost ~]$ 
+				
+			13）：查找5个最大的文件
+			
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find . -type f -exec ls -s {} \; | sort -n -r | head -5
+				368 ./.gstreamer-0.10/registry.i686.bin
+				92 ./.cache/ibus/bus/registry.xml
+				72 ./.pulse/5b978174703703dfd668aa8a00000096-stream-volumes.tdb
+				68 ./.gconfd/saved_state
+				60 ./.pulse/5b978174703703dfd668aa8a00000096-device-volumes.tdb
+				[xyl@localhost ~]$ 
+				
+			13）：查找5个最小的文件
+			
+				[xyl@localhost ~]$ 
+				[xyl@localhost ~]$ find . -type f -exec ls -s {} \; | sort -n | head -5
+				0 ./Class/class
+				0 ./Class/class1
+				0 ./Class/class2
+				0 ./Class/class3
+				0 ./.gconf/apps/brasero/%gconf.xml
+				[xyl@localhost ~]$
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+
