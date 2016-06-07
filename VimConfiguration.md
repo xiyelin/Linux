@@ -2,7 +2,10 @@
 
 
 <br>
-    
+#### 效果预览 <br>
+![fanal](https://github.com/xiyelin/Linux/tree/master/picture/fanal.png)
+
+<br>
 #####0.安装Vim：<br>
 
     　　如果你的Linux系统中还没有安装Vim可以去官网下载：http://www.vim.org ，或者直接使用命令：yum -y install vim 进行安装。
