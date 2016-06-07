@@ -4,7 +4,7 @@
 <br>
 
 #### 效果预览 <br>
-![fanal](https://github.com/xiyelin/Linux/tree/master/picture/fanal.png)
+![image](https://github.com/xiyelin/Linux/tree/master/picture/fanal.png)
 
 <br>
 #####0.安装Vim：<br>
@@ -40,9 +40,9 @@
     　　现在你打开 Vim 在底行模式下输入命令：help 就可以查看中文帮助文档了。
     　　
 <br>
-![fanal](https://github.com/xiyelin/Linux/tree/master/picture/help.png)
+![image](https://github.com/xiyelin/Linux/tree/master/picture/help.png)
 <br>
-![fanal](https://github.com/xiyelin/Linux/tree/master/picture/helppage.png)
+![image](https://github.com/xiyelin/Linux/tree/master/picture/helppage.png)
 <br>
 
 ##### 3.配置 .vimrc <br>
@@ -87,7 +87,7 @@
         到跳转之前的地方，则使用命令 <C - T>，即 Ctrl + T 即可。(可以使用 :help usr_29 在Vim帮助手册中查看详细的使用教程)
 
 <br>
-![fanal](https://github.com/xiyelin/Linux/tree/master/picture/ctags.png)
+![image](https://github.com/xiyelin/Linux/tree/master/picture/ctags.png)
 <br>
 ##### 4.安装 Taglist 插件 <br>
 
@@ -107,7 +107,7 @@
     　　启动 Vim 之后，使用底行模式输入：Tlist 即可进入该界面。
 
 <br>
-![fanal](https://github.com/xiyelin/Linux/tree/master/picture/TagList.png)
+![image](https://github.com/xiyelin/Linux/tree/master/picture/TagList.png)
 <br>
 ##### 5.安装  WinManager 插件 <br>
 
@@ -136,7 +136,7 @@
                 在 Vim 命令模式下直接输入 wm 即可进入该界面。
 
 <br>
-![fanal](https://github.com/xiyelin/Linux/tree/master/picture/WinManager.png)
+![image](https://github.com/xiyelin/Linux/tree/master/picture/WinManager.png)
 <br>
 ##### 6.安装 MiniBufExplorer 插件 <br>
 
@@ -159,7 +159,7 @@
     　　        
 
 <br>
-![fanal](https://github.com/xiyelin/Linux/tree/master/picture/miniBuffer.png)
+![image](https://github.com/xiyelin/Linux/tree/master/picture/miniBuffer.png)
 <br>
 
 ##### 7.安装 A 插件 <br>
