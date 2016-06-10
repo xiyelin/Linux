@@ -4,7 +4,12 @@
 <br>
 
 #### 效果预览 <br>
-![image](https://github.com/xiyelin/Linux/tree/master/picture/fanal.png)
+![image](Linux/picture/fanal.png)
+
+
+
+
+
 
 <br>
 #####0.安装Vim：<br>
