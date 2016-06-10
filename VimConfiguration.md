@@ -4,9 +4,7 @@
 <br>
 
 #### 效果预览 <br>
-![image](Linux/picture/fanal.png)
-
-
+![image](https://github.com/xiyelin/Linux/tree/master/picture/fanal.png)
 
 
 
@@ -46,8 +44,19 @@
     　　
 <br>
 ![image](https://github.com/xiyelin/Linux/tree/master/picture/help.png)
+
+
+
+
+
 <br>
 ![image](https://github.com/xiyelin/Linux/tree/master/picture/helppage.png)
+
+
+
+
+
+
 <br>
 <br>
 ##### 3.配置 .vimrc <br>
@@ -93,6 +102,11 @@
 
 <br>
 ![image](https://github.com/xiyelin/Linux/tree/master/picture/ctags.png)
+
+
+
+
+
 <br>
 <br>
 ##### 4.安装 Taglist 插件 <br>
@@ -114,6 +128,11 @@
 
 <br>
 ![image](https://github.com/xiyelin/Linux/tree/master/picture/TagList.png)
+
+
+
+
+
 <br>
 <br>
 ##### 5.安装  WinManager 插件 <br>
@@ -144,6 +163,12 @@
 
 <br>
 ![image](https://github.com/xiyelin/Linux/tree/master/picture/WinManager.png)
+
+
+
+
+
+
 <br>
 <br>
 ##### 6.安装 MiniBufExplorer 插件 <br>
@@ -168,6 +193,12 @@
 
 <br>
 ![image](https://github.com/xiyelin/Linux/tree/master/picture/miniBuffer.png)
+
+
+
+
+
+
 <br>
 <br>
 ##### 7.安装 A 插件 <br>
