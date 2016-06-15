@@ -4,7 +4,7 @@
 <br>
 
 #### 效果预览 <br>
-![image](https://github.com/xiyelin/Linux/tree/master/picture/fanal.png)
+![image](http://hbimg.b0.upaiyun.com/fff4bb99e1a0a9a29c891a9410ffc45785f195f88aba-zocztJ_fw658)
 
 
 
@@ -43,14 +43,14 @@
     　　现在你打开 Vim 在底行模式下输入命令：help 就可以查看中文帮助文档了。
     　　
 <br>
-![image](https://github.com/xiyelin/Linux/tree/master/picture/help.png)
+![image](http://hbimg.b0.upaiyun.com/226170cda51f43a939d3ffa46448784145a08d2c6665-Iresdn_fw658)
 
 
 
 
 
 <br>
-![image](https://github.com/xiyelin/Linux/tree/master/picture/helppage.png)
+![image](http://hbimg.b0.upaiyun.com/016c258be7dafe5f11b763e471ce7f3bc3655eb4a3f6-Kn5hRD_fw658)
 
 
 
@@ -101,7 +101,7 @@
         到跳转之前的地方，则使用命令 <C - T>，即 Ctrl + T 即可。(可以使用 :help usr_29 在Vim帮助手册中查看详细的使用教程)
 
 <br>
-![image](https://github.com/xiyelin/Linux/tree/master/picture/ctags.png)
+![image](http://hbimg.b0.upaiyun.com/4d7d10633ce718db963d66d8920f645ddfaccb53b9c5-Bhtznm_fw658)
 
 
 
@@ -127,7 +127,7 @@
     　　启动 Vim 之后，使用底行模式输入：Tlist 即可进入该界面。
 
 <br>
-![image](https://github.com/xiyelin/Linux/tree/master/picture/TagList.png)
+![image](http://hbimg.b0.upaiyun.com/38b78db9c16f8ae484648199fc2f7641290ae1bc63b0-FCN3oQ_fw658)
 
 
 
@@ -162,7 +162,7 @@
                 在 Vim 命令模式下直接输入 wm 即可进入该界面。
 
 <br>
-![image](https://github.com/xiyelin/Linux/tree/master/picture/WinManager.png)
+![image](http://hbimg.b0.upaiyun.com/28b49dc74914032b8b14de83e4b5bde8993a2ed37323-IRAi3j_fw658)
 
 
 
@@ -192,7 +192,7 @@
     　　        
 
 <br>
-![image](https://github.com/xiyelin/Linux/tree/master/picture/miniBuffer.png)
+![image](http://hbimg.b0.upaiyun.com/eb006dbcc10fea24a914267991ab96b87a7a8754303b-NSSScd_fw658)
 
 
 
