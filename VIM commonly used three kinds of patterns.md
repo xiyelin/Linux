@@ -44,7 +44,8 @@
 <br>  
 ### 三种模式的转换如下图所示：
 
-	![vim-mode](http://hbimg.b0.upaiyun.com/04f03fca5d81865305c84096c57550e4e22f80982ae8-mTyI2b_fw658)
+
+![vim-mode](http://hbimg.b0.upaiyun.com/04f03fca5d81865305c84096c57550e4e22f80982ae8-mTyI2b_fw658)
     
     
     
