@@ -4,7 +4,7 @@
 <br>
 
 #### 效果预览 <br>
-![image](http://hbimg.b0.upaiyun.com/fff4bb99e1a0a9a29c891a9410ffc45785f195f88aba-zocztJ_fw658)
+![image](./fanal.png)
 
 
 
