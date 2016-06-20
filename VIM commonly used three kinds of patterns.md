@@ -1,7 +1,7 @@
 ## Vim常用的三种模式介绍：
-- [x] 命令模式(command-mode)
-- [x] 插入模式(insert-mode)
-- [x] 底行模式(last-line-mode)
+* [命令模式(command-mode)](#命令模式(command-mode))
+* [插入模式(insert-mode)](#插入模式(insert-mode))
+* [底行模式(last-line-mode)](#底行模式(last-line-mode))
 
 
 <br>
