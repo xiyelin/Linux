@@ -9,7 +9,7 @@
 
 ### 目录
 
-* [文件描述符](./the file descriptor)
+* [文件描述符](https://github.com/xiyelin/Linux/blob/master/File/The%20file%20descriptor.md)
 * [](#)
 * [](#)
 * [](#)
