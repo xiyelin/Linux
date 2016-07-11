@@ -12,18 +12,18 @@
 ### 目录
 
 * [文件描述符](https://github.com/xiyelin/Linux/blob/master/File/The%20file%20descriptor.md)
-* [open()](#https://github.com/xiyelin/Linux/blob/master/File/Open%20Function.md)
-* [create()](#https://github.com/xiyelin/Linux/blob/master/File/Create%20Function.md)
-* [close()](#https://github.com/xiyelin/Linux/blob/master/File/Close%20Function.md)
-* [lseek()](#https://github.com/xiyelin/Linux/blob/master/File/Lseek%20Function.md)
-* [read()](#https://github.com/xiyelin/Linux/blob/master/File/Read%20Function.md)
-* [write()](#https://github.com/xiyelin/Linux/blob/master/File/Write%20Function.md)
-* [I/O的效率](#https://github.com/xiyelin/Linux/blob/master/File/The-efficiency-of-the-I%5CO.md)
-* [文件共享](#https://github.com/xiyelin/Linux/blob/master/File/File%20sharing.md)
-* [原子操作](#https://github.com/xiyelin/Linux/blob/master/File/Atomic%20operation.md)
-* [dup和dup2函数](#https://github.com/xiyelin/Linux/blob/master/File/dup%20and%20dup2.md)
-* [sysc、fsync 和 fdatasync 函数](#https://github.com/xiyelin/Linux/blob/master/File/sysc%E3%80%81fsync%20and%20fdatasync%20Function.md)
-* [fcntl()](#https://github.com/xiyelin/Linux/blob/master/File/Fcntl%20Function.md)
+* [open()](https://github.com/xiyelin/Linux/blob/master/File/Open%20Function.md)
+* [create()](https://github.com/xiyelin/Linux/blob/master/File/Create%20Function.md)
+* [close()](https://github.com/xiyelin/Linux/blob/master/File/Close%20Function.md)
+* [lseek()](https://github.com/xiyelin/Linux/blob/master/File/Lseek%20Function.md)
+* [read()](https://github.com/xiyelin/Linux/blob/master/File/Read%20Function.md)
+* [write()](https://github.com/xiyelin/Linux/blob/master/File/Write%20Function.md)
+* [I/O的效率](https://github.com/xiyelin/Linux/blob/master/File/The-efficiency-of-the-I%5CO.md)
+* [文件共享](https://github.com/xiyelin/Linux/blob/master/File/File%20sharing.md)
+* [原子操作](https://github.com/xiyelin/Linux/blob/master/File/Atomic%20operation.md)
+* [dup()和dup2()](https://github.com/xiyelin/Linux/blob/master/File/dup%20and%20dup2.md)
+* [sysc()、fsync()、fdatasync()](https://github.com/xiyelin/Linux/blob/master/File/sysc%E3%80%81fsync%20and%20fdatasync%20Function.md)
+* [fcntl()](https://github.com/xiyelin/Linux/blob/master/File/Fcntl%20Function.md)
 
 
 <br>
