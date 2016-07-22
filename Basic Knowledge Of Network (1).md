@@ -40,3 +40,29 @@
 	
 
 ![TCP-IP-Level_Image](http://hbimg.b0.upaiyun.com/d292c2d9b56528160b337dbacee87c8fd549223410d1c-tALvyx_fw658)
+
+
+
+### OSI模型到TCP/IP模型的映射
+
+![OSI_TCP-IP_Image](http://hbimg.b0.upaiyun.com/38222151d8183504d9feee54b9e55fb2601133e612127-b9HXrQ_fw658)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
