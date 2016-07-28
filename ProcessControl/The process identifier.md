@@ -35,3 +35,19 @@
 <br>
 
 ### 除了进程ID，每个进程还有一些其它的标识符：
+
+![image](http://hbimg.b0.upaiyun.com/3dc43aedce1468ef8a72a3f2d72143ea3896e95713f7f-E2aGKw_fw658)
+
+	注意：这些函数都没有出错返回！
+
+<br>
+
+
+
+
+
+
+
+
+
+
