@@ -63,7 +63,7 @@
 	
 	1） 进程推进顺序合法
 	
-	当进程P1和P2并发执行时，如果按照下述顺序推进：P1：Request（R1）； P1：Request（R2）； P1: Relese（R1）；P1: Relese（R2）； P2：Request（R2）； P2：Request（R1）； P2: Relese（R2）；P2: Relese（R1）；这两个进程便可顺利完成，这种不会引起进程死锁的推进顺序是合法的。
+	当进程P1和P2并发执行时，如果按照下述顺序推进：P1：Request（R1）； P1：Request（R2）； P1: Relese（R1）；P1: Relese（R2）；   P2：Request（R2）； P2：Request（R1）； P2: Relese（R2）；P2: Relese（R1）；这两个进程便可顺利完成，这种不会引起进程死锁的推进顺序是合法的。
 
 	2） 进程推进顺序非法
 
@@ -108,8 +108,11 @@
 	由用户输入数据，分别对可利用资源向量矩阵AVAILABLE、最大需求矩阵MAX、分配矩阵ALLOCATION、需求矩阵NEED赋值。
 	
 	银行家算法
-	在避免死锁的方法中，所施加的限制条件较弱，有可能获得令人满意的系统性能。在该方法中把系统的状态分为安全状态和不安全状态，只要能使系统始终都处于安全状态，便可以避免发生死锁。
+	
+	在避免死锁的方法中，所施加的限制条件较弱，有可能获得令人满意的系统性能。在该方法中把系统的状态分为安全状态和不安全状态，  
+	只要使系统始终都处于安全状态，便可以避免发生死锁。
 	银行家算法的基本思想是分配资源之前，判断系统是否是安全的；若是，才分配。它是最具有代表性的避免死锁的算法。
+	
 	设进程cusneed提出请求REQUEST [i]，则银行家算法按如下规则进行判断。
 	(1)如果REQUEST [cusneed] [i]<= NEED[cusneed][i]，则转（2)；否则，出错。
 	(2)如果REQUEST [cusneed] [i]<= AVAILABLE[i]，则转（3)；否则，等待。
@@ -122,13 +125,13 @@
 	安全性检查算法
 	(1）设置两个工作向量Work=AVAILABLE;FINISH;
 	(2)从进程集合中找到一个满足下述条件的进程，
-	FINISH==false;
-	NEED<=Work;
+		FINISH==false;
+		NEED<=Work;
 	如找到，执行（3)；否则，执行（4)
 	(3)设进程获得资源，可顺利执行，直至完成，从而释放资源。
-	Work=Work+ALLOCATION;
-	Finish=true;
-	GOTO 2
+		Work=Work+ALLOCATION;
+		Finish=true;
+		GOTO 2
 	(4)如所有的进程Finish= true，则表示安全；否则系统不安全。
 	
 
